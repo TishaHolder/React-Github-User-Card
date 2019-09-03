@@ -1,6 +1,7 @@
 import React from 'react';
 import UserCard from "./components/UserCard.js";
 import FollowersList from "./components/FollowersList.js";
+import SearchForm from "./components/SearchForm.js";
 import './App.css';
 
 
@@ -9,12 +10,12 @@ class App extends React.Component {
     super();
 
     this.state = {
+      userName: "TishaHolder",
       userData: {},
       followersData: [{}]
     };
   }
-
-  
+ 
 
   fetchUser = () => {
 
@@ -38,6 +39,11 @@ class App extends React.Component {
 
   }
 
+  searchedUserName = (userName) => {
+    this.setState ( {userName});
+
+  }
+
   //run when the component is mounted and is first created - if you want to do something once at the start of a 
   //component's life you put it inside this method 
   componentDidMount(){
@@ -51,9 +57,15 @@ class App extends React.Component {
   //runs every time our component state is updated and we re-render it
   //this will not run on the first render of our component only on re-renders
   //make subsequent API based on things that have changed
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
 
     console.log(this.state);
+    
+    if (this.state.userName !== prevState.userName) {
+      this.fetchUser();
+      this.fetchFollowers();
+    }
+
 
   }
 
@@ -63,6 +75,8 @@ class App extends React.Component {
 
     return (
       <div>
+
+        <SearchForm searchedUserName = {this.searchedUserName}/>
 
         <UserCard user = {this.state.userData} />
 
