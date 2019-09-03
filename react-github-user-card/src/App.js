@@ -1,5 +1,6 @@
 import React from 'react';
 import UserCard from "./components/UserCard.js";
+import FollowersList from "./components/FollowersList.js";
 import './App.css';
 
 
@@ -8,19 +9,42 @@ class App extends React.Component {
     super();
 
     this.state = {
-      userData: {}
+      userData: {},
+      followersData: [{}]
     };
+  }
+
+  
+
+  fetchUser = () => {
+
+    fetch("https://api.github.com/users/TishaHolder")
+
+    //if you are using axios .json is not necessary - tells response object to return data with response (parses json in the request)    
+    .then(res => res.json())
+    .then(data => this.setState({ userData: data})) 
+    .catch(err => console.log("there was an error")); 
+
+  }
+
+  fetchFollowers = () => {
+
+    fetch("https://api.github.com/users/TishaHolder/followers")
+
+    //if you are using axios .json is not necessary - tells response object to return data with response (parses json in the request)    
+    .then(res => res.json())
+    .then(data => this.setState({ followersData: data})) 
+    .catch(err => console.log("there was an error")); 
+
   }
 
   //run when the component is mounted and is first created - if you want to do something once at the start of a 
   //component's life you put it inside this method 
   componentDidMount(){
-    fetch("https://api.github.com/users/TishaHolder")
-    //if you are using axios .json is not necessary - tells response object to return data with response (parses json in the request)
-    console.log(res)
-    .then(res => res.json())
-    .then(res => this.setState({ userData: res})) 
-    .catch(err => console.log("there was an error")); 
+
+    this.fetchUser();
+    this.fetchFollowers();
+    
 
   }
 
@@ -31,7 +55,6 @@ class App extends React.Component {
 
     console.log(this.state);
 
-
   }
 
  
@@ -41,7 +64,9 @@ class App extends React.Component {
     return (
       <div>
 
-        <UserCard user = {this.state.user} />
+        <UserCard user = {this.state.userData} />
+
+        <FollowersList followers = {this.state.followersData} />
 
       </div>
 
