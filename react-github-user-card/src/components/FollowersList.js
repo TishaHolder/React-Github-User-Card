@@ -5,9 +5,9 @@ function FollowersList (props) {
 
     return (
         <div>
-            {props.followers.map ( (follower, index) => 
+            {props.followers.map ( (follower) => 
 
-                <FollowerCard key = {index} follower = {follower} />            
+                <FollowerCard key = {follower.id} follower = {follower} />            
 
             )}
         </div>
