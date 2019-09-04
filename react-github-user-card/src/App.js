@@ -19,7 +19,7 @@ class App extends React.Component {
 
   fetchUser = () => {
 
-    fetch("https://api.github.com/users/TishaHolder")
+    fetch(`https://api.github.com/users/${this.state.userName}`)
 
     //if you are using axios .json is not necessary - tells response object to return data with response (parses json in the request)    
     .then(res => res.json())
@@ -30,7 +30,7 @@ class App extends React.Component {
 
   fetchFollowers = () => {
 
-    fetch("https://api.github.com/users/TishaHolder/followers")
+    fetch(`https://api.github.com/users/${this.state.userName}/followers`)
 
     //if you are using axios .json is not necessary - tells response object to return data with response (parses json in the request)    
     .then(res => res.json())
@@ -49,8 +49,7 @@ class App extends React.Component {
   componentDidMount(){
 
     this.fetchUser();
-    this.fetchFollowers();
-    
+    this.fetchFollowers();    
 
   }
 
@@ -74,15 +73,29 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
+    <div className = "main-container-div">    
 
-        <SearchForm searchedUserName = {this.searchedUserName}/>
+      <div className = "main-search-div">      
 
-        <UserCard user = {this.state.userData} />
-
-        <FollowersList followers = {this.state.followersData} />
+              <SearchForm searchedUserName = {this.searchedUserName}/>    
 
       </div>
+
+        
+
+      <div className = "search-results-div">
+
+        <div>
+
+          <UserCard user = {this.state.userData} />
+          
+        </div>
+
+          <FollowersList followers = {this.state.followersData} />
+
+      </div>
+
+    </div>
 
     );
   }

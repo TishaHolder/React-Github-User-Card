@@ -4,7 +4,8 @@ import FollowerCard from "./FollowerCard.js";
 function FollowersList (props) {
 
     return (
-        <div>
+        <div className = "grid-view">
+
             {props.followers.map ( (follower) => 
 
                 <FollowerCard key = {follower.id} follower = {follower} />            

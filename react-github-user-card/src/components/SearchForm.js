@@ -23,14 +23,17 @@ class SearchForm extends React.Component {
 
     render() {
         return (
-            <div>
-                {/*putting the handle submit on the form instead of the button means when you hit enter it will also 
-                   submit the form */}
+            <div className = "search-form-div">
+             {/*putting the handle submit on the form instead of the button means when you hit enter it will also 
+                   submit the form */}              
+
                 <form onSubmit = {this.handleSubmit}>
+
+                <h2>GitHub</h2>
 
                     <input type = "text" 
                            name = "search" 
-                           placeholder = "search" 
+                           //placeholder = "search" 
                            value = {this.state.search}
                            onChange = {this.handleChange} 
                     />
