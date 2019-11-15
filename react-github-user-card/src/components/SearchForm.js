@@ -44,7 +44,7 @@ class SearchForm extends React.Component {
                                 className = "search-input"
                                 type = "text" 
                                 name = "search" 
-                                //placeholder = "search" 
+                                placeholder = "find GitHub users and their followers..." 
                                 value = {this.state.search}
                                 onChange = {this.handleChange} 
                             />

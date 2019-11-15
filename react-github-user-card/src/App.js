@@ -2,6 +2,7 @@ import React from 'react';
 import UserCard from "./components/UserCard.js";
 import FollowersList from "./components/FollowersList.js";
 import SearchForm from "./components/SearchForm.js";
+import BlankCard from "./components/BlankCard.js";
 import './App.css';
 
 
@@ -14,7 +15,7 @@ class App extends React.Component {
       userData: {},
       followersData: [{}]
     };
-  }
+  } 
  
 
   fetchUser = () => {
@@ -46,10 +47,10 @@ class App extends React.Component {
 
   //run when the component is mounted and is first created - if you want to do something once at the start of a 
   //component's life you put it inside this method 
-  componentDidMount(){    
+  componentDidMount(){       
 
       this.fetchUser();
-      this.fetchFollowers();  
+      this.fetchFollowers();     
 
   }
 
@@ -66,45 +67,41 @@ class App extends React.Component {
     }
 
 
-  }
+  } 
 
- 
+  render() {    
+     
+      return (
+        
+        <div className = "main-container-div">    
 
-  render() {
+          <div className = "main-search-div">      
 
-    return (
-    <div className = "main-container-div">    
+              <SearchForm searchedUserName = {this.searchedUserName}/>    
 
-      <div className = "main-search-div">      
+          </div>        
 
-          <SearchForm searchedUserName = {this.searchedUserName}/>    
+          <div className = "search-results-div">
 
-      </div>        
+            <div className = "users-content">              
+              <UserCard user = {this.state.userData} />              
+            </div>
 
-      <div className = "search-results-div">
+            <div>
 
-        <div className = "users-content">
+              <FollowersList followers = {this.state.followersData} />
 
-          <UserCard user = {this.state.userData} />
-          
+            </div>
+
+          </div>
+
         </div>
 
-        <div>
+      );//end return   
+    
 
-          <FollowersList followers = {this.state.followersData} />
+  }//end render
 
-        </div>
-
-      </div>
-
-    </div>
-
-    );
-  }
-
-  
-
-  
-}
+}//end class
 
 export default App;

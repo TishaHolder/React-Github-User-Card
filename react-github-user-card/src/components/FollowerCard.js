@@ -8,8 +8,7 @@ function FollowerCard (props) {
       <Card >
         <Image src = {props.follower.avatar_url} wrapped ui={false}/>
         <Card.Content>
-          <Card.Header>{props.follower.login}</Card.Header>         
-
+          <Card.Header>{props.follower.login}</Card.Header> 
         </Card.Content>       
 
       </Card>
