@@ -84,7 +84,7 @@ class App extends React.Component {
           <div className = "search-results-div">
 
             <div className = "users-content">              
-              <UserCard user = {this.state.userData} />              
+              <BlankCard />           
             </div>
 
             <div>
