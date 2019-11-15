@@ -1,5 +1,7 @@
 import React from "react";
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Tab, Menu, Icon, Card, List, Image } from "semantic-ui-react";
+import 'semantic-ui-css/semantic.css'; 
+import 'semantic-ui-css/semantic.min.css'; 
 
 function UserCard (props) {  
 
