@@ -46,16 +46,16 @@ class App extends React.Component {
 
   //run when the component is mounted and is first created - if you want to do something once at the start of a 
   //component's life you put it inside this method 
-  componentDidMount(){
+  componentDidMount(){    
 
-    this.fetchUser();
-    this.fetchFollowers();    
+      this.fetchUser();
+      this.fetchFollowers();  
 
   }
 
   //runs every time our component state is updated and we re-render it
   //this will not run on the first render of our component only on re-renders
-  //make subsequent API based on things that have changed
+  //make subsequent API request based on things that have changed
   componentDidUpdate(prevProps, prevState) {
 
     console.log(this.state);
@@ -77,7 +77,7 @@ class App extends React.Component {
 
       <div className = "main-search-div">      
 
-              <SearchForm searchedUserName = {this.searchedUserName}/>    
+          <SearchForm searchedUserName = {this.searchedUserName}/>    
 
       </div>
 

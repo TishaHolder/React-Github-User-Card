@@ -1,4 +1,5 @@
 import React from "react";
+import search from '../search.svg';
 
 class SearchForm extends React.Component {
 
@@ -23,24 +24,34 @@ class SearchForm extends React.Component {
 
     render() {
         return (
-            <div className = "search-form-div">
+            <div className = "navbar">
              {/*putting the handle submit on the form instead of the button means when you hit enter it will also 
-                   submit the form */}              
+                   submit the form */} 
 
-                <form onSubmit = {this.handleSubmit}>
+                <section className = "search-form-section" >             
 
-                <h2>GitHub</h2>
+                    <form className = "search-form" onSubmit = {this.handleSubmit}>
 
-                    <input type = "text" 
-                           name = "search" 
-                           //placeholder = "search" 
-                           value = {this.state.search}
-                           onChange = {this.handleChange} 
-                    />
+                    <h2>GitHub</h2>
 
-                    <button type = "submit"> Search </button>
+                    <div className='search-div' >
 
-                </form>
+                        <input 
+                            className='search'
+                            type = "text" 
+                            name = "search" 
+                            //placeholder = "search" 
+                            value = {this.state.search}
+                            onChange = {this.handleChange} 
+                        />
+
+                        <img src={search} alt='' className='search-img' onClick = {this.handleSubmit} />
+                        
+                    </div>
+
+                    </form>
+
+                </section>
 
             </div>
 

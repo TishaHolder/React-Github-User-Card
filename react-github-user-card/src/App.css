@@ -101,7 +101,7 @@ button:active {
   
 }
 
-.user-card {  
+/*.user-card {  
  
   background-color: #fff;
   border: 0;
@@ -113,4 +113,70 @@ button:active {
   margin: 1rem auto;
   
  
+}*/
+
+.main-content {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  opacity: 0.9;
 }
+
+.navbar {
+  border: 1px solid red;
+  padding: 20px;
+  margin-bottom: 80px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  display: flex;
+  flex-wrap: no-wrap;
+  height: auto;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 2px px -8px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 2px 5px -8px rgba(0, 0, 0, 0.42);
+  box-shadow: 0px 5px 10px -8px rgba(0, 0, 0, 0.42);
+}
+
+.search-form-section {
+  width: 30%;  
+  height: auto;
+  border: 1px solid red;
+  
+}
+
+.search-form{
+  width: 100%;
+ 
+}
+
+.search-div {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border: 1px solid #00b5ad;
+  background-color: white;
+  border-radius: 10px;
+  height: 26px;
+  overflow: hidden; 
+  
+}
+
+.search {
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  height: 100%;
+  
+}
+
+.search-img {
+  width: 20%;
+  height: 15px;
+  
+}
+
