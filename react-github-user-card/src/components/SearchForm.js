@@ -24,34 +24,38 @@ class SearchForm extends React.Component {
 
     render() {
         return (
-            <div className = "navbar">
+            <div className = "header-bar">
              {/*putting the handle submit on the form instead of the button means when you hit enter it will also 
                    submit the form */} 
 
-                <section className = "search-form-section" >             
+                <div className = "search-form-section" >             
 
                     <form className = "search-form" onSubmit = {this.handleSubmit}>
 
-                    <h2>GitHub</h2>
+                        <div className = "github-label-div">
 
-                    <div className='search-div' >
+                            <h2>GitHub User Search</h2>
 
-                        <input 
-                            className='search'
-                            type = "text" 
-                            name = "search" 
-                            //placeholder = "search" 
-                            value = {this.state.search}
-                            onChange = {this.handleChange} 
-                        />
+                        </div>
 
-                        <img src={search} alt='' className='search-img' onClick = {this.handleSubmit} />
-                        
-                    </div>
+                        <div className='search-div' >
+
+                            <input 
+                                className = "search-input"
+                                type = "text" 
+                                name = "search" 
+                                //placeholder = "search" 
+                                value = {this.state.search}
+                                onChange = {this.handleChange} 
+                            />
+
+                            <img src={search} alt='' className='search-img' onClick = {this.handleSubmit} />
+
+                        </div>
 
                     </form>
 
-                </section>
+                </div>
 
             </div>
 

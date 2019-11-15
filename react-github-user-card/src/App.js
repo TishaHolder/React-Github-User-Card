@@ -79,9 +79,7 @@ class App extends React.Component {
 
           <SearchForm searchedUserName = {this.searchedUserName}/>    
 
-      </div>
-
-        
+      </div>        
 
       <div className = "search-results-div">
 
