@@ -4,7 +4,7 @@ import FollowerCard from "./FollowerCard.js";
 function FollowersList (props) {
 
     return (
-        <div className = "main-content">
+        <div className = "followers-content">
 
             {props.followers.map ( (follower) => 
 

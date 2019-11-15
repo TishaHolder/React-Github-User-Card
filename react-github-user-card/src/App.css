@@ -27,7 +27,7 @@ body {
 .search-results-div {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: no-wrap;  
   justify-content: space-around;
 
@@ -191,4 +191,24 @@ button:active {
   height: 15px;
   
 }
+
+.followers-content {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  opacity: 0.9;
+}
+
+.users-content {  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  opacity: 0.9;
+}
+
+
 

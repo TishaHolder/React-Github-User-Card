@@ -83,13 +83,17 @@ class App extends React.Component {
 
       <div className = "search-results-div">
 
-        <div>
+        <div className = "users-content">
 
           <UserCard user = {this.state.userData} />
           
         </div>
 
+        <div>
+
           <FollowersList followers = {this.state.followersData} />
+
+        </div>
 
       </div>
 
