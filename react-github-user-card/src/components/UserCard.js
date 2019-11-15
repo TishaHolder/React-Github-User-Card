@@ -21,7 +21,7 @@ function UserCard (props) {
               </Card.Description>
 
               <Card.Description>
-                {props.user.blog}
+                <a href = {props.user.blog} target = "blank">{props.user.blog}</a>
               </Card.Description>
 
             </Card.Content>
